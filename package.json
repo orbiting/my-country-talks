@@ -1,0 +1,44 @@
+{
+  "name": "my-country-talks",
+  "version": "0.5.0",
+  "description": "custom component for My Country Talks by Zeit",
+  "main": "index.js",
+  "scripts": {
+    "dev": "rollup -c -w & cd test && node server.js",
+    "build": "rollup -c",
+    "translations": "gsheets --key=1FFbrwSf7hiRSwh9t4ORWIxN2SQRx-gUZkL62C-6wdGU --title=de --pretty --out src/lib/translations.de.json && gsheets --key=1FFbrwSf7hiRSwh9t4ORWIxN2SQRx-gUZkL62C-6wdGU --title=en --pretty --out src/lib/translations.en.json",
+    "deploy": "s3cmd sync --exclude '.DS_Store' --verbose --acl-public build/ s3://republik-assets/dynamic-components/my-country-talks/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/orbiting/talk-to-the-machine.git"
+  },
+  "author": "",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/orbiting/talk-to-the-machine/issues"
+  },
+  "homepage": "https://github.com/orbiting/talk-to-the-machine#readme",
+  "devDependencies": {
+    "@babel/core": "^7.0.0-rc.1",
+    "@babel/preset-env": "^7.0.0-rc.1",
+    "@babel/preset-react": "^7.0.0-rc.1",
+    "core-js": "^2.5.7",
+    "express": "^4.16.3",
+    "file-loader": "^1.1.11",
+    "glamor": "^2.20.40",
+    "gsheets": "^2.0.0",
+    "next": "^6.1.1",
+    "raw-loader": "^0.5.1",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "rollup": "^0.64.1",
+    "rollup-plugin-alias": "^1.4.0",
+    "rollup-plugin-babel": "^4.0.0-beta.5",
+    "rollup-plugin-commonjs": "^9.1.5",
+    "rollup-plugin-json": "^3.0.0",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "rollup-plugin-replace": "^2.0.0",
+    "unist-util-visit": "^1.4.0"
+  }
+}

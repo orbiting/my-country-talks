@@ -1,30 +1,63 @@
-import { question1 } from './embedCodes'
+import {
+  question1,
+  question2,
+  question3,
+  question4,
+  question5,
+  question6
+} from './embedCodes'
 import React, { Component } from 'react'
 import debounce from 'lodash.debounce'
 import styles from './styles'
 import posed from 'react-pose'
 
+const getForProp = question => {
+  switch (question) {
+    case 1:
+      return question1
+    case 2:
+      return question2
+    case 3:
+      return question3
+    case 4:
+      return question4
+    case 5:
+      return question5
+    case 6:
+      return question6
+    default:
+      return null
+  }
+}
+
+const getEmbedCode = question => {
+  return (
+    (getForProp(question) && {
+      __html: getForProp(question).embed
+    }) || {
+      __html: `Invalid question property ${question}`
+    }
+  )
+}
+
+const getQuestion = question => {
+  return (
+    (getForProp(question) &&
+      getForProp(question).question) ||
+    `Invalid question property ${question}`
+  )
+}
+
 const SubmitButton = posed.button({
   off: {
     scale: 1,
-    transition: { duration: 200 }
+    transition: { duration: 30 }
   },
   on: {
     scale: 1.05,
     transition: { duration: 30 }
   }
 })
-
-const getEmbedCode = question => {
-  switch (question) {
-    case 'question1':
-      return { __html: question1 }
-    default:
-      return {
-        __html: `Invalid question parameter ${question}`
-      }
-  }
-}
 
 export default class Widget extends Component {
   constructor(props) {
@@ -109,8 +142,7 @@ export default class Widget extends Component {
             <div {...styles.embedSection}>
               <div>
                 <p {...styles.questionTextLarger}>
-                  Soll die Schweiz mehr
-                  Flüchtlinge aufnehmen?
+                  {getQuestion(question)}
                 </p>
                 <div {...styles.questionRadios}>
                   <label

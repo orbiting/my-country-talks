@@ -34,16 +34,20 @@ export default class Widget extends Component {
       isButtonHighlighted: false
     }
 
-    this.turnHighlightingOff = debounce(() => {
+    this.off = () =>
       this.setState({
         isButtonHighlighted: false
       })
-    }, 800)
 
-    this.triggerHighlighting = () => {
+    this.debouncedOff = debounce(this.off, 800)
+
+    this.on = () => {
       this.setState({ isButtonHighlighted: true })
-      this.turnHighlightingOff()
     }
+  }
+
+  componentWillUnmount() {
+    this.debouncedOff.cancel()
   }
 
   render() {
@@ -110,22 +114,22 @@ export default class Widget extends Component {
                 </p>
                 <div {...styles.questionRadios}>
                   <label
-                    onClick={
-                      this.triggerHighlighting
-                    }
-                    onMouseEnter={
-                      this.triggerHighlighting
-                    }
+                    onClick={() => {
+                      this.on()
+                      this.debouncedOff()
+                    }}
+                    onMouseEnter={this.on}
+                    onMouseLeave={this.off}
                   >
                     Ja
                   </label>
                   <label
-                    onClick={
-                      this.triggerHighlighting
-                    }
-                    onMouseEnter={
-                      this.triggerHighlighting
-                    }
+                    onClick={() => {
+                      this.on()
+                      this.debouncedOff()
+                    }}
+                    onMouseEnter={this.on}
+                    onMouseLeave={this.off}
                   >
                     Nein
                   </label>

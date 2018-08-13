@@ -4,7 +4,7 @@
   "description": "Custom Consent UI for My Country Talks widget.",
   "main": "index.js",
   "scripts": {
-    "dev": "rollup -c -w & cd test && node server.js",
+    "dev": "concurrently \"rollup -c -w\" \"cd test && node server.js\"",
     "build": "rollup -c",
     "deploy": "s3cmd sync --exclude '.DS_Store' --verbose --acl-public build/ s3://republik-assets/dynamic-components/my-country-talks/"
   },
@@ -23,6 +23,7 @@
     "@babel/preset-env": "^7.0.0-rc.1",
     "@babel/preset-react": "^7.0.0-rc.1",
     "babel-eslint": "^8.2.6",
+    "concurrently": "^3.6.1",
     "core-js": "^2.5.7",
     "eslint": "^5.3.0",
     "eslint-plugin-react": "^7.10.0",

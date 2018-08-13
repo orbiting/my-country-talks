@@ -12,7 +12,6 @@ export const question1 = `<iframe
     margin-bottom: 1.5em;
   }
 </style>
-
 <script>
   window.addEventListener('message', function (evt){
     var embed = document.getElementById('mycountrytalks-embed');

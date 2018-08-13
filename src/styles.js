@@ -3,10 +3,11 @@ import { css } from 'glamor'
 export default {
   a: css({
     color: '#000',
-    '&:hover': {textDecoration: 'none'},
-    '&:active': {textDecoration: 'none'}
+    '&:hover': { textDecoration: 'none' },
+    '&:active': { textDecoration: 'none' }
   }),
   embed: css({
+    boxSizing: 'border-box',
     position: 'relative',
     margin: '1.5em auto 1.5em auto',
     textAlign: 'center',
@@ -44,23 +45,54 @@ export default {
     lineHeight: '27px',
     display: 'block',
     width: '100%',
-    marginLeft: 'auto',
     marginBottom: '1em',
+    marginTop: '0',
+    marginLeft: 'auto',
     marginRight: 'auto',
     maxWidth: '600px',
     fontWeight: 700
+  }),
+  questionRadios: css({
+    position: 'relative',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: '100%',
+    maxWidth: '400px',
+    margin: '0 auto',
+    paddingLeft: '45px',
+    paddingRight: '45px',
+    paddingBottom: '5px',
+    overflow: 'hidden',
+    '& label': {
+      borderRadius: '3px',
+      backgroundColor: '#000000 !important',
+      color: '#ffffff !important',
+      position: 'relative',
+      userSelect: 'none',
+      zIndex: 2,
+      fontSize: '18px',
+      lineHeight: '27px',
+      width: 'calc(50% - 8px)',
+      padding: '.7em .9em',
+      cursor: 'default',
+      transition: 'all .1s ease-in-out',
+      opacity: 0.25,
+      transform: 'scale(1)'
+    }
   }),
   submitButton: css({
     fontSize: '18px',
     lineHeight: '27px',
     padding: '.7em 2.5em',
     color: '#fff',
-    background: '#565661',
+    background: '#3CAD00',
     transition: 'all .1s ease-in-out',
     border: 'none',
     borderRadius: '3px',
     fontWeight: 700,
     cursor: 'pointer',
+    fontFamily: 'Noto Serif, serif',
     transform: 'scale(1)',
     textDecoration: 'none',
     '&:focus': {
@@ -72,7 +104,7 @@ export default {
     },
     '&:hover': {
       color: '#fff',
-      background: '#77777c'
+      background: '#4B6359'
     }
   }),
   textColor: css({
@@ -82,25 +114,7 @@ export default {
     borderColor: 'rgba(0, 0, 0, 0.15) !important'
   }),
   subtleText: css({
-    color: 'rgba(0, 0, 0, 0.5) !important',
-    fontFamily: 'Noto Sans, sans-serif'
-  }),
-  accentColor: css({
-    color: '#ffffff !important'
-  }),
-  labelColor: css({
-    backgroundColor: '#dde1e4 !important',
-    color: '#292929 !important'
-  }),
-  buttonBackgroundColor: css({
-    color: '#ffffff !important'
-  }),
-  buttonColor: css({
-    backgroundColor: '#000000 !important',
-    color: '#ffffff !important',
-    '&:hover': {
-      backgroundColor: 'black !important'
-    }
+    color: 'rgba(0, 0, 0, 0.5) !important'
   }),
   eventLogo: css({
     position: 'absolute',
@@ -129,76 +143,3 @@ export default {
     height: '41.44px'
   })
 }
-
-/*
-.override-text-color {
-
-  .override-border-color, hr {
-    border-color: rgba(0, 0, 0, 0.15) !important; }
-
-  .override-subtle-text, .override-subtle-text a {
-    color: rgba(0, 0, 0, 0.5) !important; }
-
-  .override-accent-color {
-    border-bottom: #ffffff !important; }
-
-  .override-label-color {
-    background-color: #dde1e4 !important;
-    color: #292929 !important; }
-
-  .override-button-background-color {
-    background-color: #ffffff !important; }
-
-  .override-button-color {
-    background-color: #000000 !important;
-    color: #ffffff !important; }
-    .override-button-color:hover {
-      background-color: black !important; }
-
-  .question__radios input[type="radio"]:checked + label,
-  .question__radios input[type="radio"]:focus + label {
-    background-color: black !important; }
-
-  .override-button-text-color {
-    color: #ffffff !important; }
-
-  .override-border-bottom, .override-border-bottom:focus {
-    border-bottom-color: #000000; }
-
-  .override-field-text-color {
-    color: #ffffff; }
-
-  .override-field-border {
-    border-bottom-color: #ffffff; }
-
-  .override-background-color, .override-body-color {
-    background-color: #ffffff !important; }
-
-  input,
-  button,
-  textarea,
-  select,
-  .override-type,
-  .override-type * {
-    font-family: Noto Serif, serif; }
-
-  .override-type-reverse,
-  .override-type-reverse *,
-  .text-box p:first-of-type,
-  .text-box p:first-of-type * {
-    font-family: Noto Sans, sans-serif; }
-
-  .override-svg-fill {
-    fill: #000000 !important; }
-
-  .override-logo-background-fill {
-    fill: #dde1e4 !important; }
-
-  .override-logo-outline-stroke {
-    stroke: #292929 !important; }
-
-  .override-logo-outline-fill {
-    fill: #292929 !important; }
-
-  a {
-    color: #000000; } */

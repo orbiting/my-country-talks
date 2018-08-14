@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "concurrently \"rollup -c -w\" \"cd test && node server.js\"",
-    "build": "rollup -c",
+    "build": "rollup -c && npm run fonts",
     "fonts": "cp -R fonts/noto-serif-v6-latin/ build/fonts",
     "deploy": "s3cmd sync --exclude '.DS_Store' --verbose --acl-public build/ s3://republik-assets/dynamic-components/my-country-talks/"
   },
@@ -33,7 +33,6 @@
     "lodash.debounce": "^4.0.8",
     "next": "^6.1.1",
     "prettier": "^1.14.2",
-    "raw-loader": "^0.5.1",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-pose": "^2.2.0",

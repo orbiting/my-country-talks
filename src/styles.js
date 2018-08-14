@@ -5,26 +5,26 @@ export const fontFaces = `/* noto-serif-regular - latin */
   font-family: 'Noto Serif';
   font-style: normal;
   font-weight: 400;
-  src: url('https://cdn.republik.space/s3/republik-assets/dynamic-components/my-country-talks/fontsnoto-serif-v6-latin-regular.eot'); /* IE9 Compat Modes */
+  src: url('https://cdn.republik.space/s3/republik-assets/dynamic-components/my-country-talks/fonts/noto-serif-v6-latin-regular.eot'); /* IE9 Compat Modes */
   src: local('Noto Serif'), local('NotoSerif'),
-       url('https://cdn.republik.space/s3/republik-assets/dynamic-components/my-country-talks/fontsnoto-serif-v6-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('https://cdn.republik.space/s3/republik-assets/dynamic-components/my-country-talks/fontsnoto-serif-v6-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('https://cdn.republik.space/s3/republik-assets/dynamic-components/my-country-talks/fontsnoto-serif-v6-latin-regular.woff') format('woff'), /* Modern Browsers */
-       url('https://cdn.republik.space/s3/republik-assets/dynamic-components/my-country-talks/fontsnoto-serif-v6-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('https://cdn.republik.space/s3/republik-assets/dynamic-components/my-country-talks/fontsnoto-serif-v6-latin-regular.svg#NotoSerif') format('svg'); /* Legacy iOS */
+       url('https://cdn.republik.space/s3/republik-assets/dynamic-components/my-country-talks/fonts/noto-serif-v6-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('https://cdn.republik.space/s3/republik-assets/dynamic-components/my-country-talks/fonts/noto-serif-v6-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('https://cdn.republik.space/s3/republik-assets/dynamic-components/my-country-talks/fonts/noto-serif-v6-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('https://cdn.republik.space/s3/republik-assets/dynamic-components/my-country-talks/fonts/noto-serif-v6-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('https://cdn.republik.space/s3/republik-assets/dynamic-components/my-country-talks/fonts/noto-serif-v6-latin-regular.svg#NotoSerif') format('svg'); /* Legacy iOS */
 }
 /* noto-serif-700 - latin */
 @font-face {
   font-family: 'Noto Serif';
   font-style: normal;
   font-weight: 700;
-  src: url('https://cdn.republik.space/s3/republik-assets/dynamic-components/my-country-talks/fontsnoto-serif-v6-latin-700.eot'); /* IE9 Compat Modes */
+  src: url('https://cdn.republik.space/s3/republik-assets/dynamic-components/my-country-talks/fonts/noto-serif-v6-latin-700.eot'); /* IE9 Compat Modes */
   src: local('Noto Serif Bold'), local('NotoSerif-Bold'),
-       url('https://cdn.republik.space/s3/republik-assets/dynamic-components/my-country-talks/fontsnoto-serif-v6-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('https://cdn.republik.space/s3/republik-assets/dynamic-components/my-country-talks/fontsnoto-serif-v6-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
-       url('https://cdn.republik.space/s3/republik-assets/dynamic-components/my-country-talks/fontsnoto-serif-v6-latin-700.woff') format('woff'), /* Modern Browsers */
-       url('https://cdn.republik.space/s3/republik-assets/dynamic-components/my-country-talks/fontsnoto-serif-v6-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('https://cdn.republik.space/s3/republik-assets/dynamic-components/my-country-talks/fontsnoto-serif-v6-latin-700.svg#NotoSerif') format('svg'); /* Legacy iOS */
+       url('https://cdn.republik.space/s3/republik-assets/dynamic-components/my-country-talks/fonts/noto-serif-v6-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('https://cdn.republik.space/s3/republik-assets/dynamic-components/my-country-talks/fonts/noto-serif-v6-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+       url('https://cdn.republik.space/s3/republik-assets/dynamic-components/my-country-talks/fonts/noto-serif-v6-latin-700.woff') format('woff'), /* Modern Browsers */
+       url('https://cdn.republik.space/s3/republik-assets/dynamic-components/my-country-talks/fonts/noto-serif-v6-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('https://cdn.republik.space/s3/republik-assets/dynamic-components/my-country-talks/fonts/noto-serif-v6-latin-700.svg#NotoSerif') format('svg'); /* Legacy iOS */
 }
 `
 

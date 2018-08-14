@@ -25,13 +25,11 @@
     "@babel/preset-react": "^7.0.0-rc.1",
     "babel-eslint": "^8.2.6",
     "concurrently": "^3.6.1",
-    "core-js": "^2.5.7",
     "eslint": "^5.3.0",
     "eslint-plugin-react": "^7.10.0",
     "express": "^4.16.3",
     "file-loader": "^1.1.11",
     "glamor": "^2.20.40",
-    "gsheets": "^2.0.0",
     "lodash.debounce": "^4.0.8",
     "next": "^6.1.1",
     "prettier": "^1.14.2",
@@ -45,7 +43,6 @@
     "rollup-plugin-commonjs": "^9.1.5",
     "rollup-plugin-json": "^3.0.0",
     "rollup-plugin-node-resolve": "^3.3.0",
-    "rollup-plugin-replace": "^2.0.0",
-    "unist-util-visit": "^1.4.0"
+    "rollup-plugin-replace": "^2.0.0"
   }
 }

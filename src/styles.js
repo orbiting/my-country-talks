@@ -123,6 +123,9 @@ export default {
     fontFamily: 'Noto Serif, serif',
     transform: 'scale(1)',
     textDecoration: 'none',
+    transform: 'scale(1)',
+    transition: 'transform .2s',
+    '&.highlight': { transform: 'scale(1.05)' },
     '&:focus': {
       outline: 'none'
     },

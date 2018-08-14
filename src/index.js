@@ -9,7 +9,6 @@ import {
 import React, { Component } from 'react'
 import debounce from 'lodash.debounce'
 import styles, { fontFaces } from './styles'
-import posed from 'react-pose'
 
 const getForProp = question => {
   switch (question) {
@@ -47,17 +46,6 @@ const getQuestion = question => {
     `Invalid question property ${question}`
   )
 }
-
-const SubmitButton = posed.button({
-  off: {
-    scale: 1,
-    transition: { duration: 30 }
-  },
-  on: {
-    scale: 1.05,
-    transition: { duration: 30 }
-  }
-})
 
 export default class Widget extends Component {
   constructor(props) {
@@ -170,13 +158,13 @@ export default class Widget extends Component {
               </div>
             </div>
             <p>
-              <SubmitButton
-                pose={
-                  this.state.isButtonHighlighted
-                    ? 'on'
-                    : 'off'
-                }
+              <button
                 {...styles.submitButton}
+                className={
+                  this.state.isButtonHighlighted
+                    ? 'highlight'
+                    : ''
+                }
                 type="submit"
                 onClick={e => {
                   e.preventDefault()
@@ -186,7 +174,7 @@ export default class Widget extends Component {
                 }}
               >
                 Jetzt antworten
-              </SubmitButton>
+              </button>
             </p>
             <div
               {...styles.embedTerms}

@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "concurrently \"rollup -c -w\" \"cd test && node server.js\"",
     "build": "rollup -c",
+    "fonts": "cp -R fonts/noto-serif-v6-latin/ build/fonts",
     "deploy": "s3cmd sync --exclude '.DS_Store' --verbose --acl-public build/ s3://republik-assets/dynamic-components/my-country-talks/"
   },
   "repository": {

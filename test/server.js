@@ -9,14 +9,19 @@ const handle = app.getRequestHandler()
 
 app.prepare().then(() => {
   const server = express()
-  server.use('/build', express.static(join(__dirname, '..', 'build')))
+  server.use(
+    '/build',
+    express.static(join(__dirname, '..', 'build'))
+  )
 
   server.get('*', (req, res) => {
     return handle(req, res)
   })
 
-  server.listen(port, (err) => {
+  server.listen(port, err => {
     if (err) throw err
-    console.log(`> Ready on http://localhost:${port}`)
+    console.log(
+      `> Ready on http://localhost:${port}`
+    )
   })
 })

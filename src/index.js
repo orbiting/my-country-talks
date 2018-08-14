@@ -8,7 +8,7 @@ import {
 } from './embedCodes'
 import React, { Component } from 'react'
 import debounce from 'lodash.debounce'
-import styles from './styles'
+import styles, { fontFaces } from './styles'
 import posed from 'react-pose'
 
 const getForProp = question => {
@@ -94,9 +94,10 @@ export default class Widget extends Component {
       />
     ) : (
       <div {...styles.embed}>
-        <link
-          href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i|Noto+Serif:400,400i,700,700i"
-          rel="stylesheet"
+        <style
+          dangerouslySetInnerHTML={{
+            __html: fontFaces
+          }}
         />
         <div
           {...styles.embedInner}

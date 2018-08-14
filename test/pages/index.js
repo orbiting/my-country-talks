@@ -11,4 +11,4 @@ css.global('body', {
   fontFamily: 'Noto Serif, serif'
 })
 
-export default () => <Widget question='question1' />
+export default () => <Widget question={1} />

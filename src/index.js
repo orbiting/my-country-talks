@@ -193,7 +193,7 @@ export default class Widget extends Component {
             >
               <a
                 {...styles.a}
-                href="/die-schweiz-spricht"
+                href="/dieschweizspricht"
               >
                 «Die Schweiz spricht»
               </a>{' '}

@@ -99,13 +99,11 @@ export default class Widget extends Component {
   }
 
   componentDidMount() {
-    if (this.embed) {
-      window.addEventListener(
-        'message',
-        this.onWindowMessage,
-        false
-      )
-    }
+    window.addEventListener(
+      'message',
+      this.onWindowMessage,
+      false
+    )
   }
 
   render() {

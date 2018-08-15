@@ -116,7 +116,7 @@ export default class Widget extends Component {
           this.embed = node
         }}
         src={
-          getForProp(question) ||
+          getForProp(question) &&
           getForProp(question).url
         }
       />

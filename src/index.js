@@ -186,14 +186,13 @@ export default class Widget extends Component {
               >
                 «Die Schweiz spricht»
               </a>{' '}
-              wird von ZEIT Online betrieben. Ihre
-              Verbindung mit dieser App unterliegt{' '}
+              wird von ZEIT Online betrieben.{' '}
               <a
                 {...styles.a}
                 target="_blank"
                 href="https://www.mycountrytalks.org/die-schweiz-spricht"
               >
-                dieser Datenschutzerklärung
+                Datenschutzerklärung
               </a>
               .
             </div>

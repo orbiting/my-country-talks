@@ -95,6 +95,7 @@ export default class Widget extends Component {
       'message',
       this.onWindowMessage
     )
+    this.embed = null
   }
 
   componentDidUpdate() {

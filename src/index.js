@@ -63,9 +63,9 @@ export default class Widget extends Component {
         return
       }
       const embed = this.embed
-      const currentScrollTop = 0
-      const newScrollTop = 0
-      const additionalSafeSpace = 50
+      let currentScrollTop = 0
+      let newScrollTop = 0
+      let additionalSafeSpace = 50
       if (
         evt.origin ===
         'https://app.mycountrytalks.org'

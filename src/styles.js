@@ -172,5 +172,12 @@ export default {
     paddingRight: '.25em',
     width: '45px',
     height: '41.44px'
+  }),
+  iframe: css({
+    borderWidth: 0,
+    marginTop: '1.5em',
+    marginBottom: '1.5em',
+    height: '300px',
+    width: '100%'
   })
 }

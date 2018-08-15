@@ -29,16 +29,6 @@ const getForProp = question => {
   }
 }
 
-const getEmbedCode = question => {
-  return (
-    (getForProp(question) && {
-      __html: getForProp(question).embed
-    }) || {
-      __html: `Invalid question property ${question}`
-    }
-  )
-}
-
 const getQuestion = question => {
   return (
     (getForProp(question) &&
@@ -65,20 +55,71 @@ export default class Widget extends Component {
     this.on = () => {
       this.setState({ isButtonHighlighted: true })
     }
+
+    this.embed = null
+
+    this.onWindowMessage = evt => {
+      if (!this.embed) {
+        return
+      }
+      const embed = this.embed
+      const currentScrollTop = 0
+      const newScrollTop = 0
+      const additionalSafeSpace = 50
+      if (
+        evt.origin ===
+        'https://app.mycountrytalks.org'
+      ) {
+        if ('wasResized' in embed.dataset) {
+          currentScrollTop =
+            document.documentElement.scrollTop ||
+            document.body.scrollTop
+          newScrollTop =
+            currentScrollTop +
+            embed.getBoundingClientRect().top -
+            additionalSafeSpace
+          window.scrollTo(0, newScrollTop)
+        }
+        embed.style.height = evt.data + 'px'
+        embed.setAttribute(
+          'data-was-resized',
+          'true'
+        )
+      }
+    }
   }
 
   componentWillUnmount() {
     this.debouncedOff.cancel()
+    window.removeEventListener(
+      'message',
+      this.onWindowMessage
+    )
+  }
+
+  componentDidUpdate() {
+    if (this.embed) {
+      window.addEventListener(
+        'message',
+        this.onWindowMessage,
+        false
+      )
+    }
   }
 
   render() {
     const consentGiven = this.state.consentGiven
     const question = this.props.question
     return consentGiven ? (
-      <div
-        dangerouslySetInnerHTML={getEmbedCode(
-          question
-        )}
+      <iframe
+        {...styles.iframe}
+        ref={node => {
+          this.embed = node
+        }}
+        src={
+          getForProp(question) ||
+          getForProp(question).url
+        }
       />
     ) : (
       <div {...styles.embed}>

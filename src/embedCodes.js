@@ -15,27 +15,27 @@ export const question2 = {
 export const question3 = {
   question:
     'Wird in der Schweiz zu viel Land überbaut?',
-  embed:
+  url:
     'https://app.mycountrytalks.org/survey/739c30ba-79bb-4fb8-a510-06550dd6af47/participate?starting_question=78'
 }
 
 export const question4 = {
   question:
     'Sollten homosexuelle Paare Kinder adoptieren dürfen?',
-  embed:
+  url:
     'https://app.mycountrytalks.org/survey/739c30ba-79bb-4fb8-a510-06550dd6af47/participate?starting_question=79'
 }
 
 export const question5 = {
   question:
     'Braucht es eine Frauenquote in den Chefetagen grosser Unternehmen?',
-  embed:
+  url:
     'https://app.mycountrytalks.org/survey/739c30ba-79bb-4fb8-a510-06550dd6af47/participate?starting_question=80'
 }
 
 export const question6 = {
   question:
     'Geht es den Einwohnerinnen und Einwohnern in der Schweiz heute schlechter als vor zehn Jahren?',
-  embed:
+  url:
     'https://app.mycountrytalks.org/survey/739c30ba-79bb-4fb8-a510-06550dd6af47/participate?starting_question=81'
 }

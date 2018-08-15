@@ -98,7 +98,7 @@ export default class Widget extends Component {
     this.embed = null
   }
 
-  componentDidUpdate() {
+  componentDidMount() {
     if (this.embed) {
       window.addEventListener(
         'message',

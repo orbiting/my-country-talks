@@ -38,9 +38,12 @@ export default {
     '&:active': { textDecoration: 'none' }
   }),
   container: css({
+    overflow: 'hidden',
     padding: 15,
-    margin: '0 -19px', // 15 + 4 inner margin
     backgroundColor: '#fff'
+  }),
+  containerInner: css({
+    margin: '0 -19px', // 15 + 4 inner margin
   }),
   iframe: css({
     borderWidth: 0,

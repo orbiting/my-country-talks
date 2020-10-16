@@ -37,10 +37,21 @@ export default {
     '&:hover': { textDecoration: 'none' },
     '&:active': { textDecoration: 'none' }
   }),
+  container: css({
+    padding: 15,
+    margin: '0 -19px', // 15 + 4 inner margin
+    backgroundColor: '#fff'
+  }),
+  iframe: css({
+    borderWidth: 0,
+    margin: 0,
+    height: '300px',
+    width: '100%'
+  }),
   embed: css({
     boxSizing: 'border-box',
     position: 'relative',
-    margin: '1.5em auto 1.5em auto',
+    margin: '0 auto',
     textAlign: 'center',
     backgroundColor: '#fff',
     maxWidth: '460px',
@@ -179,12 +190,5 @@ export default {
     paddingRight: '.25em',
     width: '45px',
     height: '41.44px'
-  }),
-  iframe: css({
-    borderWidth: 0,
-    marginTop: '1em',
-    marginBottom: '1em',
-    height: '300px',
-    width: '100%'
   })
 }

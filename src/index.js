@@ -86,135 +86,137 @@ export default class Widget extends Component {
       </div>
     }
 
-    return consentGiven ? (
-      <iframe
-        {...styles.iframe}
-        ref={node => {
-          this.embed = node
-        }}
-        src={
-          question.url
-        }
-      />
-    ) : (
-      <div {...styles.embed}>
-        <style
-          dangerouslySetInnerHTML={{
-            __html: fontFaces
+    return <div {...styles.container}>
+      {consentGiven ? (
+        <iframe
+          {...styles.iframe}
+          ref={node => {
+            this.embed = node
           }}
+          src={
+            question.url
+          }
         />
-        <div
-          {...styles.embedInner}
-          {...styles.textColor}
-          {...styles.borderColor}
-        >
-          <div {...styles.eventLogo}>
-            <div
-              {...styles.eventLogoInner}
-              {...styles.backgroundColor}
-            >
-              <svg
-                {...styles.eventLogoSvg}
-                viewBox="0 0 1288 1258"
+      ) : (
+        <div {...styles.embed}>
+          <style
+            dangerouslySetInnerHTML={{
+              __html: fontFaces
+            }}
+          />
+          <div
+            {...styles.embedInner}
+            {...styles.textColor}
+            {...styles.borderColor}
+          >
+            <div {...styles.eventLogo}>
+              <div
+                {...styles.eventLogoInner}
+                {...styles.backgroundColor}
               >
-                <g fillRule="evenodd">
-                  <ellipse
-                    cx="576.09"
-                    cy="571.358"
-                    rx="576.09"
-                    ry="571.358"
-                    {...styles.eventLogoBackgroundFill}
-                  />
-                  <path
-                    {...styles.eventLogoOutlineFill}
-                    d="M678.795 716.162v130.776c0 104.964 86.471 190.261 193.362 190.261h31.858l14.43 153.147-69.692 6.566-8.632-91.62c-130.257-15.617-231.326-125.246-231.326-258.354v-60.776H494.199L691.646 60.807l67.542 18.386-173.387 636.97h92.994z"
-                    fillRule="nonzero"
-                  />
-                  <path
-                    {...styles.eventLogoOutlineFill}
-                    d="M964.56 511.768c0 34.106-27.886 61.769-62.283 61.769-34.398 0-62.277-27.663-62.277-61.769C840 477.656 867.88 450 902.277 450c34.397 0 62.283 27.656 62.283 61.768M414.56 511.768c0 34.106-27.886 61.769-62.283 61.769-34.398 0-62.277-27.663-62.277-61.769C290 477.656 317.88 450 352.277 450c34.397 0 62.283 27.656 62.283 61.768"
-                  />
-                  <path
-                    {...styles.eventLogoOutlineFill}
-                    d="M676.09 1187.716c297.582 0 541.09-241.507 541.09-536.354C1217.18 356.508 973.673 115 676.09 115S135 356.508 135 651.362c0 294.847 243.508 536.354 541.09 536.354zm0 70C339.977 1257.716 65 984.999 65 651.362 65 317.718 339.976 45 676.09 45c336.114 0 611.09 272.718 611.09 606.362 0 333.637-274.977 606.354-611.09 606.354z"
-                    fillRule="nonzero"
-                  />
-                </g>
-              </svg>
-            </div>
-          </div>
-          <form>
-            <div {...styles.embedSection}>
-              <div>
-                <p {...styles.questionTextLarger}>
-                  {question.text}
-                </p>
-                <div {...styles.questionRadios}>
-                  <label
-                    onClick={() => {
-                      this.on()
-                      this.debouncedOff()
-                    }}
-                    onMouseEnter={this.on}
-                    onMouseLeave={this.off}
-                  >
-                    Ja
-                  </label>
-                  <label
-                    onClick={() => {
-                      this.on()
-                      this.debouncedOff()
-                    }}
-                    onMouseEnter={this.on}
-                    onMouseLeave={this.off}
-                  >
-                    Nein
-                  </label>
-                </div>
+                <svg
+                  {...styles.eventLogoSvg}
+                  viewBox="0 0 1288 1258"
+                >
+                  <g fillRule="evenodd">
+                    <ellipse
+                      cx="576.09"
+                      cy="571.358"
+                      rx="576.09"
+                      ry="571.358"
+                      {...styles.eventLogoBackgroundFill}
+                    />
+                    <path
+                      {...styles.eventLogoOutlineFill}
+                      d="M678.795 716.162v130.776c0 104.964 86.471 190.261 193.362 190.261h31.858l14.43 153.147-69.692 6.566-8.632-91.62c-130.257-15.617-231.326-125.246-231.326-258.354v-60.776H494.199L691.646 60.807l67.542 18.386-173.387 636.97h92.994z"
+                      fillRule="nonzero"
+                    />
+                    <path
+                      {...styles.eventLogoOutlineFill}
+                      d="M964.56 511.768c0 34.106-27.886 61.769-62.283 61.769-34.398 0-62.277-27.663-62.277-61.769C840 477.656 867.88 450 902.277 450c34.397 0 62.283 27.656 62.283 61.768M414.56 511.768c0 34.106-27.886 61.769-62.283 61.769-34.398 0-62.277-27.663-62.277-61.769C290 477.656 317.88 450 352.277 450c34.397 0 62.283 27.656 62.283 61.768"
+                    />
+                    <path
+                      {...styles.eventLogoOutlineFill}
+                      d="M676.09 1187.716c297.582 0 541.09-241.507 541.09-536.354C1217.18 356.508 973.673 115 676.09 115S135 356.508 135 651.362c0 294.847 243.508 536.354 541.09 536.354zm0 70C339.977 1257.716 65 984.999 65 651.362 65 317.718 339.976 45 676.09 45c336.114 0 611.09 272.718 611.09 606.362 0 333.637-274.977 606.354-611.09 606.354z"
+                      fillRule="nonzero"
+                    />
+                  </g>
+                </svg>
               </div>
             </div>
-            <p>
-              <button
-                {...styles.submitButton}
-                className={
-                  this.state.isButtonHighlighted
-                    ? 'highlight'
-                    : ''
-                }
-                type="submit"
-                onClick={e => {
-                  e.preventDefault()
-                  this.setState({
-                    consentGiven: true
-                  })
-                }}
+            <form>
+              <div {...styles.embedSection}>
+                <div>
+                  <p {...styles.questionTextLarger}>
+                    {question.text}
+                  </p>
+                  <div {...styles.questionRadios}>
+                    <label
+                      onClick={() => {
+                        this.on()
+                        this.debouncedOff()
+                      }}
+                      onMouseEnter={this.on}
+                      onMouseLeave={this.off}
+                    >
+                      Ja
+                    </label>
+                    <label
+                      onClick={() => {
+                        this.on()
+                        this.debouncedOff()
+                      }}
+                      onMouseEnter={this.on}
+                      onMouseLeave={this.off}
+                    >
+                      Nein
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <p>
+                <button
+                  {...styles.submitButton}
+                  className={
+                    this.state.isButtonHighlighted
+                      ? 'highlight'
+                      : ''
+                  }
+                  type="submit"
+                  onClick={e => {
+                    e.preventDefault()
+                    this.setState({
+                      consentGiven: true
+                    })
+                  }}
+                >
+                  Jetzt antworten
+                </button>
+              </p>
+              <div
+                {...styles.embedTerms}
+                {...styles.subtleText}
               >
-                Jetzt antworten
-              </button>
-            </p>
-            <div
-              {...styles.embedTerms}
-              {...styles.subtleText}
-            >
-              <a
-                {...styles.a}
-                href={event.path}
-              >
-                «{event.title}»
-              </a>{' '}
-              wird von ZEIT Online betrieben.{' '}
-              <a
-                {...styles.a}
-                target="_blank"
-                href={event.privacyPolicyUrl}
-              >
-                Datenschutzerklärung
-              </a>
-              .
-            </div>
-          </form>
+                <a
+                  {...styles.a}
+                  href={event.path}
+                >
+                  «{event.title}»
+                </a>{' '}
+                wird von ZEIT Online betrieben.{' '}
+                <a
+                  {...styles.a}
+                  target="_blank"
+                  href={event.privacyPolicyUrl}
+                >
+                  Datenschutzerklärung
+                </a>
+                .
+              </div>
+            </form>
+          </div>
         </div>
-      </div>
-    )
+      )}
+    </div>
   }
 }

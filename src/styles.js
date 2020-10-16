@@ -1,30 +1,33 @@
 import { css } from 'glamor'
 
-export const fontFaces = `/* noto-serif-regular - latin */
+// https://google-webfonts-helper.herokuapp.com/
+
+export const fontFaces = `
+/* noto-sans-regular - latin */
 @font-face {
-  font-family: 'Noto Serif';
+  font-family: 'Noto Sans';
   font-style: normal;
   font-weight: 400;
-  src: url('https://cdn.republik.space/s3/republik-assets/dynamic-components/my-country-talks/fonts/noto-serif-v6-latin-regular.eot'); /* IE9 Compat Modes */
-  src: local('Noto Serif'), local('NotoSerif'),
-       url('https://cdn.republik.space/s3/republik-assets/dynamic-components/my-country-talks/fonts/noto-serif-v6-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('https://cdn.republik.space/s3/republik-assets/dynamic-components/my-country-talks/fonts/noto-serif-v6-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('https://cdn.republik.space/s3/republik-assets/dynamic-components/my-country-talks/fonts/noto-serif-v6-latin-regular.woff') format('woff'), /* Modern Browsers */
-       url('https://cdn.republik.space/s3/republik-assets/dynamic-components/my-country-talks/fonts/noto-serif-v6-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('https://cdn.republik.space/s3/republik-assets/dynamic-components/my-country-talks/fonts/noto-serif-v6-latin-regular.svg#NotoSerif') format('svg'); /* Legacy iOS */
+  src: url('https://cdn.repub.ch/s3/republik-assets/dynamic-components/my-country-talks/fonts/noto-sans-v11-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Noto Sans'), local('NotoSans'),
+       url('https://cdn.repub.ch/s3/republik-assets/dynamic-components/my-country-talks/fonts/noto-sans-v11-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('https://cdn.repub.ch/s3/republik-assets/dynamic-components/my-country-talks/fonts/noto-sans-v11-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('https://cdn.repub.ch/s3/republik-assets/dynamic-components/my-country-talks/fonts/noto-sans-v11-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('https://cdn.repub.ch/s3/republik-assets/dynamic-components/my-country-talks/fonts/noto-sans-v11-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('https://cdn.repub.ch/s3/republik-assets/dynamic-components/my-country-talks/fonts/noto-sans-v11-latin-regular.svg#NotoSans') format('svg'); /* Legacy iOS */
 }
-/* noto-serif-700 - latin */
+/* noto-sans-700 - latin */
 @font-face {
-  font-family: 'Noto Serif';
+  font-family: 'Noto Sans';
   font-style: normal;
   font-weight: 700;
-  src: url('https://cdn.republik.space/s3/republik-assets/dynamic-components/my-country-talks/fonts/noto-serif-v6-latin-700.eot'); /* IE9 Compat Modes */
-  src: local('Noto Serif Bold'), local('NotoSerif-Bold'),
-       url('https://cdn.republik.space/s3/republik-assets/dynamic-components/my-country-talks/fonts/noto-serif-v6-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('https://cdn.republik.space/s3/republik-assets/dynamic-components/my-country-talks/fonts/noto-serif-v6-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
-       url('https://cdn.republik.space/s3/republik-assets/dynamic-components/my-country-talks/fonts/noto-serif-v6-latin-700.woff') format('woff'), /* Modern Browsers */
-       url('https://cdn.republik.space/s3/republik-assets/dynamic-components/my-country-talks/fonts/noto-serif-v6-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('https://cdn.republik.space/s3/republik-assets/dynamic-components/my-country-talks/fonts/noto-serif-v6-latin-700.svg#NotoSerif') format('svg'); /* Legacy iOS */
+  src: url('https://cdn.repub.ch/s3/republik-assets/dynamic-components/my-country-talks/fonts/noto-sans-v11-latin-700.eot'); /* IE9 Compat Modes */
+  src: local('Noto Sans Bold'), local('NotoSans-Bold'),
+       url('https://cdn.repub.ch/s3/republik-assets/dynamic-components/my-country-talks/fonts/noto-sans-v11-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('https://cdn.repub.ch/s3/republik-assets/dynamic-components/my-country-talks/fonts/noto-sans-v11-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+       url('https://cdn.repub.ch/s3/republik-assets/dynamic-components/my-country-talks/fonts/noto-sans-v11-latin-700.woff') format('woff'), /* Modern Browsers */
+       url('https://cdn.repub.ch/s3/republik-assets/dynamic-components/my-country-talks/fonts/noto-sans-v11-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('https://cdn.repub.ch/s3/republik-assets/dynamic-components/my-country-talks/fonts/noto-sans-v11-latin-700.svg#NotoSans') format('svg'); /* Legacy iOS */
 }
 `
 
@@ -47,12 +50,13 @@ export default {
       maxWidth: '700px',
       paddingTop: '30px'
     },
-    fontFamily: 'Noto Serif, serif'
+    fontFamily: 'Noto Sans, sans-serif'
   }),
   embedInner: css({
     position: 'relative',
     padding: '35px 16px',
     border: '1px solid',
+    margin: '0 4px',
     '@media screen and (min-width:40.625em)': {
       padding: '45px 25px'
     }
@@ -93,6 +97,9 @@ export default {
     paddingBottom: '5px',
     overflow: 'hidden',
     '& label': {
+      '&:first-child': {
+        marginLeft: 5  // imitate invisible input radio in original
+      },
       borderRadius: '3px',
       backgroundColor: '#000000 !important',
       color: '#ffffff !important',
@@ -120,7 +127,7 @@ export default {
     borderRadius: '3px',
     fontWeight: 700,
     cursor: 'pointer',
-    fontFamily: 'Noto Serif, serif',
+    fontFamily: 'Noto Sans, sans-serif',
     transform: 'scale(1)',
     textDecoration: 'none',
     transform: 'scale(1)',
@@ -175,8 +182,8 @@ export default {
   }),
   iframe: css({
     borderWidth: 0,
-    marginTop: '1.5em',
-    marginBottom: '1.5em',
+    marginTop: '1em',
+    marginBottom: '1em',
     height: '300px',
     width: '100%'
   })

@@ -5,6 +5,11 @@ import React, { Component } from 'react'
 import debounce from 'lodash.debounce'
 import styles, { fontFaces } from './styles'
 
+const matchUserAgent = value => value && !!value.match(/RepublikApp/)
+
+const inNativeAppBrowser = true ||
+  process.browser && !!matchUserAgent(navigator.userAgent)
+
 export default class Widget extends Component {
   constructor(props) {
     super(props)
@@ -185,6 +190,10 @@ export default class Widget extends Component {
                   type="submit"
                   onClick={e => {
                     e.preventDefault()
+                    if (inNativeAppBrowser) {
+                      window.open(question.url)
+                      return
+                    }
                     this.setState({
                       consentGiven: true
                     })

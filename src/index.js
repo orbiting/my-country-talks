@@ -7,7 +7,7 @@ import styles, { fontFaces } from './styles'
 
 const matchUserAgent = value => value && !!value.match(/RepublikApp/)
 
-const inNativeAppBrowser = process.browser && !!matchUserAgent(navigator.userAgent)
+const inNativeAppBrowser = typeof navigator !== 'undefined' && !!matchUserAgent(navigator.userAgent)
 
 export default class Widget extends Component {
   constructor(props) {

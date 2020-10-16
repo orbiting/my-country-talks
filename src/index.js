@@ -1,41 +1,9 @@
 import {
-  question1,
-  question2,
-  question3,
-  question4,
-  question5,
-  question6
+  events
 } from './embedCodes'
 import React, { Component } from 'react'
 import debounce from 'lodash.debounce'
 import styles, { fontFaces } from './styles'
-
-const getForProp = question => {
-  switch (question) {
-    case 1:
-      return question1
-    case 2:
-      return question2
-    case 3:
-      return question3
-    case 4:
-      return question4
-    case 5:
-      return question5
-    case 6:
-      return question6
-    default:
-      return null
-  }
-}
-
-const getQuestion = question => {
-  return (
-    (getForProp(question) &&
-      getForProp(question).question) ||
-    `Invalid question property ${question}`
-  )
-}
 
 export default class Widget extends Component {
   constructor(props) {
@@ -107,8 +75,17 @@ export default class Widget extends Component {
   }
 
   render() {
-    const consentGiven = this.state.consentGiven
-    const question = this.props.question
+    const event = events[this.props.event || 'chTalks2018']
+    const question = event && event.questions[(this.props.question || 1) - 1]
+
+    const { consentGiven } = this.state
+
+    if (!question) {
+      return <div {...styles.embed}>
+        <p>{!event ? 'Ereignis ("event") nicht verfügbar.' : 'Frage ("question") nicht verfügbar.'}</p>
+      </div>
+    }
+
     return consentGiven ? (
       <iframe
         {...styles.iframe}
@@ -116,8 +93,7 @@ export default class Widget extends Component {
           this.embed = node
         }}
         src={
-          getForProp(question) &&
-          getForProp(question).url
+          question.url
         }
       />
     ) : (
@@ -171,7 +147,7 @@ export default class Widget extends Component {
             <div {...styles.embedSection}>
               <div>
                 <p {...styles.questionTextLarger}>
-                  {getQuestion(question)}
+                  {question.text}
                 </p>
                 <div {...styles.questionRadios}>
                   <label
@@ -222,15 +198,15 @@ export default class Widget extends Component {
             >
               <a
                 {...styles.a}
-                href="/dieschweizspricht"
+                href={event.path}
               >
-                «Die Schweiz spricht»
+                «{event.title}»
               </a>{' '}
               wird von ZEIT Online betrieben.{' '}
               <a
                 {...styles.a}
                 target="_blank"
-                href="https://www.mycountrytalks.org/die-schweiz-spricht"
+                href={event.privacyPolicyUrl}
               >
                 Datenschutzerklärung
               </a>

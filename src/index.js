@@ -209,8 +209,8 @@ export default class Widget extends Component {
                     href={event.path}
                   >
                     «{event.title}»
-                  </a>{' '}
-                  wird von ZEIT Online betrieben.{' '}
+                  </a>
+                  {event.glueText || ' '}
                   <a
                     {...styles.a}
                     target="_blank"

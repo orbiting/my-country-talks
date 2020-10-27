@@ -1,6 +1,7 @@
 const chTalks2018 = {
   title: 'Die Schweiz spricht',
   path: '/dieschweizspricht',
+  glueText: ' wird von «Zeit Online» betrieben: ',
   privacyPolicyUrl: 'https://www.mycountrytalks.org/die-schweiz-spricht',
   questions: [
     {
@@ -45,6 +46,7 @@ const chTalks2018 = {
 const euTalks2020 = {
   title: 'Europa spricht',
   path: '/europaspricht',
+  glueText: ' ist eine Kollaboration der Republik und 18 weiterer Medienpartner aus ganz Europa. Das Projekt wird betrieben von «Zeit Online»: ',
   privacyPolicyUrl: 'https://www.mycountrytalks.org/europe-talks-2020-privacy-policy',
   questions: [
     {
